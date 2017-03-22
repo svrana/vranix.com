@@ -1,4 +1,4 @@
-baseurl = "https://vranix.com/"
+baseurl = "https://vranix.com"
 languageCode = "en-us"
 title = "vranix"
 theme = "beautifulhugo"
