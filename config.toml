@@ -9,7 +9,7 @@ pygmentCodeFences = true
 #googleAnalytics = "XXX"
 
 [Params]
-  subtitle = "Personal website of Shaw Vrana"
+  #subtitle = "Personal website of Shaw Vrana"
   logo = "img/modified.jpg"
   #logo = "img/favicon.png"
   favicon = "img/favicon.png"
@@ -54,12 +54,12 @@ pygmentCodeFences = true
 
 [[menu.main]]
     name = "About"
-    url = "/page/about/"
+    url = "/about"
     weight = 2
 
 [[menu.main]]
     name = "Resume"
-    url = "/page/resume/"
+    url = "/resume"
     weight = 3
 
 #[[menu.main]]

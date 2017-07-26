@@ -458,7 +458,7 @@ footer .theme-by {
 }
 .intro-header .page-heading h1 {
   margin-top: 0;
-  font-size: 50px;
+  font-size: 35px;
 }
 .intro-header .post-heading h1 {
   margin-top: 0;
@@ -511,10 +511,10 @@ footer .theme-by {
     padding: 150px 0;
   }
   .intro-header .page-heading h1 {
-    font-size: 50px;
+    font-size: 35px;
   }
   .intro-header .post-heading h1 {
-    font-size: 50px;
+    font-size: 35px;
   }
   .intro-header.big-img .img-desc {
     font-size: 14px;
