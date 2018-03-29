@@ -6,14 +6,16 @@ comments: false
 ### Summary
 
 Software engineering generalist with experience ranging from Linux kernel to
-user interface development. Interests include early stage startups, Linux,
-     networking and mobile.
+user interface development.  Interests include early stage startups,
+distributed systems and managing infrastructure at scale.
+
 
 ### Experience
 
 #### Wish, Member of Technical Staff (2015-current)
 
-Full-stack web development
+Projects include product search, data pipeline construction, backend
+performance improvements and infrastructure automation.
 
 #### Lookout, Senior Software Engineer (2012-2015)
 
@@ -53,8 +55,13 @@ Vanderbilt University, BS, Philosophy and Computer Science (1995-1999)
 [Viz](https://github.com/svrana/Viz): a mobile application for Android that
 enables users to download videos and watch them on the go, without a reliable
 network connection. Over 10 million downloads on the Google Play store before
-it was removed by Google. Code now available on Github.
+it was removed by Google. Code available on Github.
 
 ### Skills
 
-Experience with Go, Python, Javascript, Ruby, C, Java, Linux kernel, Android, full-stack web
+Experience with Go, Python, Javascript, Ruby, C, Java, Linux, Android and Chef
+
+
+<sub>
+[pdf version](http://hosted.vranix.com/shaw-vrana-resume.pdf)
+</sub>
