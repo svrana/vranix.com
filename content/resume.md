@@ -6,13 +6,17 @@ comments: false
 ### Summary
 
 Software engineering generalist with experience ranging from Linux kernel to
-user interface development.  Interests include early stage startups,
+user interface development. Interests include early stage startups,
 distributed systems and managing infrastructure at scale.
 
 
 ### Experience
 
-#### Wish, Member of Technical Staff (2015-current)
+#### Synthesis AI, Head of Software Engineering (2019-current)
+
+Building a scalable platform for synthetic data generation.
+
+#### Wish, Member of Technical Staff (2015-2019)
 
 Projects include product search, data pipeline construction, backend
 performance improvements and infrastructure automation.
@@ -59,8 +63,8 @@ it was removed by Google. Code available on Github.
 
 ### Skills
 
-Experience with Go, Python, Javascript, Ruby, C, Java, Linux, Android and Chef
-
+Experience with Go, Kubernetes and Pulumi; Python, Javascript, Ruby, C, Java, Linux,
+Android and getting started with [Nix](https://nixos.org).
 
 <sub>
 [pdf version](http://hosted.vranix.com/shaw-vrana-resume.pdf)
