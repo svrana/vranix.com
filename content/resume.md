@@ -12,9 +12,13 @@ distributed systems and managing infrastructure at scale.
 
 ### Experience
 
-#### Synthesis AI, Head of Software Engineering (2019-current)
+#### ConductorOne, Software Engineer, (2020-current)
 
-Building a scalable platform for synthetic data generation.
+Stealth
+
+#### Synthesis AI, Head of Software Engineering (2019-2020)
+
+Built a scalable platform for synthetic data generation.
 
 #### Wish, Member of Technical Staff (2015-2019)
 

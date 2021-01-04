@@ -21,7 +21,7 @@ build: ## Build website
 
 .PHONY: serve
 serve: ## Run the hugo server to see changes as you make them
-	@hugo server
+	@hugo server -D
 
 .PHONY: deploy
 deploy: build ## Deploy to AWS
