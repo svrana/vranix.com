@@ -6,6 +6,9 @@ metaDataFormat = "yaml"
 pygmentsCodeFences = true
 pygmentsUseClasses = true
 
+[[module.imports]]
+  path = "github.com/halogenica/beautifulhugo"
+
 [markup]
   [markup.highlight]
     codeFences = true
