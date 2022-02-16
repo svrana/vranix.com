@@ -1,0 +1,47 @@
+baseURL = 'https://vranix.com/'
+languageCode = 'en-us'
+defaultConentLanage = "en"
+title = 'vranix'
+theme = 'KeepIt'
+
+paginate = 12
+enableRobotsTXT = true
+
+[Permalinks]
+ posts = "/:year/:filename/"
+
+[menu]
+  [[menu.main]]
+    name = "Blog"
+    url = "/posts/"
+    weight = 1
+  [[menu.main]]
+    name = "About"
+    url = "/about"
+    weight = 4
+    Email = "shaw@vranix.com"
+  [[menu.main]]
+    name = "Resume"
+    url = "/resume"
+    weight = 4
+
+[params.social]
+    GitHub = "svrana"
+    Email = "shaw@vranix.com"
+    Linkedin = "shawvrana"
+    keybase = "svrana"
+
+[params]
+	author = "svrana"
+	avatar = "/fancypants.jpg"
+  subtitle = "127.0.0.1"
+  description = "Shaw Vrana's personal website"
+
+[params.share]
+  Twitter = true
+  Linkedin = true
+  Reddit = true
+  HackerNews = true
+  Facebook = true
+
+copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
