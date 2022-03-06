@@ -52,4 +52,4 @@ it was removed by Google. Code available on Github.
 
 Experience with Go, Haskell, Kubernetes, Pulumi and others.
 
-[pdf version](http://hosted.vranix.com/shaw-vrana-resume.pdf)
+[pdf version](https://hosted.vranix.com/shaw-vrana-resume.pdf)
