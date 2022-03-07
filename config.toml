@@ -7,8 +7,12 @@ theme = 'KeepIt'
 paginate = 12
 enableRobotsTXT = true
 
+[blackfriday]
+  plainIDAnchors = true
+  hrefTargetBlank = true
+
 [Permalinks]
- posts = "/:year/:filename/"
+  posts = "/:year/:filename/"
 
 [menu]
   [[menu.main]]
