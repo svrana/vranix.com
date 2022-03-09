@@ -48,4 +48,19 @@ enableRobotsTXT = true
   HackerNews = true
   Facebook = true
 
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    guessSyntax = false
+    hl_Lines = ''
+    lineAnchors = ''
+    lineNoStart = 1
+    lineNos = false
+    lineNumbersInTable = true
+    noClasses = true
+    noHl = false
+    style = 'monokai'
+    tabWidth = 4
+
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."
