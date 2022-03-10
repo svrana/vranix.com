@@ -1,6 +1,8 @@
 ---
 title: "Nix dev shells from 10,000 feet"
 date: 2022-03-09T12:37:53-08:00
+series:
+- Nix
 draft: false
 ---
 
