@@ -9,7 +9,8 @@ draft: false
 After neglecting this small place on the internet for years, I cloned the repo with the
 hope of quickly updating my resume. This site is constructed with [Hugo](https://gohugo.io),
 which is a static site generator written in golang. Anyway, I needed to install that too, so I
-edited my [home-manager](https://github.com/nix-community/home-manager) configuration and [switched](https://github.com/svrana/nix-home/blob/main/Makefile#L26).
+edited my [home-manager](https://github.com/nix-community/home-manager) configuration and [switched](https://github.com/svrana/nix-home/blob/main/Makefile#L26),
+i.e., I installed it.
 
 ## There was an attempt
 
@@ -79,10 +80,10 @@ time you enter the directory:
       },
 ```
 
-I've abbreviated it, but you can see the git sha that of the nixpkgs repo to which
-we are pinned. nixpkgs (https://github.com/nixpkgs) is the repo that holds our dependencies (and 80k+
-software packages for nix) and the instructions of how to build them for the nix package
-manager.
+I've abbreviated it, but you can see the git sha of the nixpkgs repo to which we are
+pinned. nixpkgs (https://github.com/nixpkgs) is the repo that holds our dependencies (and
+80k+ software packages for nix) and the instructions of how to build them for the nix
+package manager.
 
 ## Faster
 
