@@ -11,7 +11,7 @@
       {
         devShell = pkgs.mkShell {
           nativeBuildInputs = [ pkgs.bashInteractive ];
-          buildInputs = with pkgs; [ hugo awscli2 ];
+          buildInputs = with pkgs; [ hugo minify awscli2 ];
         };
       });
 }

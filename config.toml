@@ -54,9 +54,11 @@ enableRobotsTXT = true
     lineNoStart = 1
     lineNos = false
     lineNumbersInTable = true
-    noClasses = true
+    noClasses = false
     noHl = true
-    style = 'monokai'
+    style = 'solarized-dark'
     tabWidth = 4
+    pygmentsUseClasses = true
+    pygmentsCodeFences = true
 
 copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License."

@@ -23,9 +23,16 @@ build: ## Build website
 serve: ## Run the hugo server to see changes as you make them
 	@hugo server -D
 
+.PHONY: gen-syntax-dark
+gen-syntax-css-dark:
+	hugo gen chromastyles --style=solarized-dark > assets/syntax/dark.css
+
+.PHONY: gen-syntax-light
+gen-syntax-css-light:
+	hugo gen chromastyles --style=solarized-light > assets/syntax/light.css
+
 .PHONY: gen-syntax-css
-gen-syntax-css:
-	hugo gen chromastyles --style=solarized-dark > public/css/syntax.css
+gen-syntax-css: gen-syntax-css-light gen-syntax-css-dark ## Generate css for syntax highlighting
 
 .PHONY: deploy
 deploy: build ## Deploy to AWS

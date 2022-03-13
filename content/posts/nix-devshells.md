@@ -1,6 +1,7 @@
 ---
 title: "Nix dev shells from 10,000 feet"
 date: 2022-03-09T12:37:53-08:00
+highlight: true
 series:
 - Nix
 draft: false
@@ -28,7 +29,7 @@ my own mistake and this wasn't going to happen again. This time I would fix the 
 
 I created a flake.nix in the root of my project directory with the following contents.
 
-```nix {linenos=false,hl_lines=[14]}
+```nix {hl_lines=[14]}
 {
   description = "my hugo flake with a shell";
   inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";

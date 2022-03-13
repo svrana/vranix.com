@@ -23,8 +23,7 @@ Nix dev shells from 10,000 feet | vranix
 <meta name=twitter:title content="Nix dev shells from 10,000 feet">
 <meta name=twitter:description content="Setting the scene After neglecting this small place on the internet for years, I cloned the repo with the hope of quickly updating my resume. This site is constructed with Hugo, which is a static site generator written in golang. Anyway, I needed to install that too, so I edited my home-manager configuration and switched, i.e., I installed it.
 There was an attempt First thing I tried was running &ldquo;hugo serve&rdquo; which starts a web server and serves the content of your hugo project so changes can be seen as you make them.">
-<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Nix dev shells from 10,000 feet","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/vranix.com\/2022\/nix-devshells\/"},"genre":"posts","wordcount":584,"url":"https:\/\/vranix.com\/2022\/nix-devshells\/","datePublished":"2022-03-09T12:37:53-08:00","dateModified":"2022-03-09T12:37:53-08:00","description":""}</script>
-</head>
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Nix dev shells from 10,000 feet","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/vranix.com\/2022\/nix-devshells\/"},"genre":"posts","wordcount":584,"url":"https:\/\/vranix.com\/2022\/nix-devshells\/","datePublished":"2022-03-09T12:37:53-08:00","dateModified":"2022-03-09T12:37:53-08:00","description":""}</script><style>.chroma{color:#93a1a1;background-color:#073642}.chroma .x{color:#cb4b16}.chroma .err{}.chroma .lntd{vertical-align:top;padding:0;margin:0;border:0}.chroma .lntable{border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block}.chroma .hl{width:100%;background-color:#ffc;color:#495050}.chroma .lnt{margin-right:.4em;padding:0 .4em;color:#495050}.chroma .ln{margin-right:.4em;padding:0 .4em;color:#495050}.chroma .k{color:#719e07}.chroma .kc{color:#cb4b16}.chroma .kd{color:#268bd2}.chroma .kn{color:#719e07}.chroma .kp{color:#719e07}.chroma .kr{color:#268bd2}.chroma .kt{color:#dc322f}.chroma .n{}.chroma .na{}.chroma .nb{color:#b58900}.chroma .bp{color:#268bd2}.chroma .nc{color:#268bd2}.chroma .no{color:#cb4b16}.chroma .nd{color:#268bd2}.chroma .ni{color:#cb4b16}.chroma .ne{color:#cb4b16}.chroma .nf{color:#268bd2}.chroma .fm{}.chroma .nl{}.chroma .nn{}.chroma .nx{}.chroma .py{}.chroma .nt{color:#268bd2}.chroma .nv{color:#268bd2}.chroma .vc{}.chroma .vg{}.chroma .vi{}.chroma .vm{}.chroma .l{}.chroma .ld{}.chroma .s{color:#2aa198}.chroma .sa{color:#2aa198}.chroma .sb{color:#586e75}.chroma .sc{color:#2aa198}.chroma .dl{color:#2aa198}.chroma .sd{}.chroma .s2{color:#2aa198}.chroma .se{color:#cb4b16}.chroma .sh{}.chroma .si{color:#2aa198}.chroma .sx{color:#2aa198}.chroma .sr{color:#dc322f}.chroma .s1{color:#2aa198}.chroma .ss{color:#2aa198}.chroma .m{color:#2aa198}.chroma .mb{color:#2aa198}.chroma .mf{color:#2aa198}.chroma .mh{color:#2aa198}.chroma .mi{color:#2aa198}.chroma .il{color:#2aa198}.chroma .mo{color:#2aa198}.chroma .o{color:#719e07}.chroma .ow{color:#719e07}.chroma .p{}.chroma .c{color:#586e75}.chroma .ch{color:#586e75}.chroma .cm{color:#586e75}.chroma .c1{color:#586e75}.chroma .cs{color:#719e07}.chroma .cp{color:#719e07}.chroma .cpf{color:#719e07}.chroma .g{}.chroma .gd{color:#dc322f}.chroma .ge{font-style:italic}.chroma .gr{color:#dc322f;font-weight:700}.chroma .gh{color:#cb4b16}.chroma .gi{color:#719e07}.chroma .go{}.chroma .gp{}.chroma .gs{font-weight:700}.chroma .gu{color:#268bd2}.chroma .gt{}.chroma .gl{}.chroma .w{}</style></head>
 <body>
 <div class=wrapper>
 <nav class=navbar>
@@ -87,30 +86,30 @@ much newer version of hugo for a website that was created using a previous versi
 my own mistake and this wasn&rsquo;t going to happen again. This time I would fix the glitch.</p>
 <h2 id=enter-nix>Enter Nix</h2>
 <p>I created a flake.nix in the root of my project directory with the following contents.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-nix data-lang=nix>{
-  description <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;my hugo flake with a shell&#34;</span>;
-  inputs<span style=color:#f92672>.</span>nixpkgs<span style=color:#f92672>.</span>url <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;github:NixOS/nixpkgs/nixpkgs-unstable&#34;</span>;
-  inputs<span style=color:#f92672>.</span>flake-utils<span style=color:#f92672>.</span>url <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;github:numtide/flake-utils&#34;</span>;
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-nix data-lang=nix><span class=p>{</span>
+  <span class=n>description</span> <span class=o>=</span> <span class=s2>&#34;my hugo flake with a shell&#34;</span><span class=p>;</span>
+  <span class=n>inputs</span><span class=o>.</span><span class=n>nixpkgs</span><span class=o>.</span><span class=n>url</span> <span class=o>=</span> <span class=s2>&#34;github:NixOS/nixpkgs/nixpkgs-unstable&#34;</span><span class=p>;</span>
+  <span class=n>inputs</span><span class=o>.</span><span class=n>flake-utils</span><span class=o>.</span><span class=n>url</span> <span class=o>=</span> <span class=s2>&#34;github:numtide/flake-utils&#34;</span><span class=p>;</span>
 
-  outputs <span style=color:#f92672>=</span> { self<span style=color:#f92672>,</span> nixpkgs<span style=color:#f92672>,</span> flake-utils }:
-    flake-utils<span style=color:#f92672>.</span>lib<span style=color:#f92672>.</span>eachDefaultSystem (system:
-      <span style=color:#66d9ef>let</span>
-        pkgs <span style=color:#f92672>=</span> nixpkgs<span style=color:#f92672>.</span>legacyPackages<span style=color:#f92672>.</span><span style=color:#e6db74>${</span>system<span style=color:#e6db74>}</span>;
-      <span style=color:#66d9ef>in</span>
-      {
-        devShell <span style=color:#f92672>=</span> pkgs<span style=color:#f92672>.</span>mkShell {
-          nativeBuildInputs <span style=color:#f92672>=</span> [ pkgs<span style=color:#f92672>.</span>bashInteractive ];
-<span style=display:block;width:100%;background-color:#3c3d38>          buildInputs <span style=color:#f92672>=</span> <span style=color:#66d9ef>with</span> pkgs; [ hugo awscli2 ];
-</span>        };
-      });
-}
+  <span class=n>outputs</span> <span class=o>=</span> <span class=p>{</span> <span class=n>self</span><span class=o>,</span> <span class=n>nixpkgs</span><span class=o>,</span> <span class=n>flake-utils</span> <span class=p>}:</span>
+    <span class=n>flake-utils</span><span class=o>.</span><span class=n>lib</span><span class=o>.</span><span class=n>eachDefaultSystem</span> <span class=p>(</span><span class=n>system</span><span class=p>:</span>
+      <span class=k>let</span>
+        <span class=n>pkgs</span> <span class=o>=</span> <span class=n>nixpkgs</span><span class=o>.</span><span class=n>legacyPackages</span><span class=o>.</span><span class=si>${</span><span class=n>system</span><span class=si>}</span><span class=p>;</span>
+      <span class=k>in</span>
+      <span class=p>{</span>
+        <span class=n>devShell</span> <span class=o>=</span> <span class=n>pkgs</span><span class=o>.</span><span class=n>mkShell</span> <span class=p>{</span>
+          <span class=n>nativeBuildInputs</span> <span class=o>=</span> <span class=p>[</span> <span class=n>pkgs</span><span class=o>.</span><span class=n>bashInteractive</span> <span class=p>];</span>
+<span class=hl>          <span class=n>buildInputs</span> <span class=o>=</span> <span class=k>with</span> <span class=n>pkgs</span><span class=p>;</span> <span class=p>[</span> <span class=n>hugo</span> <span class=n>awscli2</span> <span class=p>];</span>
+</span>        <span class=p>};</span>
+      <span class=p>});</span>
+<span class=p>}</span>
 </code></pre></div><p>This flake isn&rsquo;t any good. I don&rsquo;t even automate the build, but it does what exactly what
 I need. It pins the dependencies I need to build and deploy my project, hugo and awscli2.</p>
 <p>I also added a .envrc file with the following contents:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash> <span style=color:#66d9ef>if</span> ! has nix_direnv_version <span style=color:#f92672>||</span> ! nix_direnv_version 1.6.0; <span style=color:#66d9ef>then</span>
-      source_url <span style=color:#e6db74>&#34;https://raw.githubusercontent.com/nix-community/nix-direnv/1.6.0/direnvrc&#34;</span> <span style=color:#e6db74>&#34;sha256-FqqbUyxL8MZdXe5LkMgtNo95raZFbegFpl5k2+Pr
-</span><span style=color:#e6db74>  Cow=&#34;</span>
-  <span style=color:#66d9ef>fi</span>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash> <span class=k>if</span> ! has nix_direnv_version <span class=o>||</span> ! nix_direnv_version 1.6.0<span class=p>;</span> <span class=k>then</span>
+      source_url <span class=s2>&#34;https://raw.githubusercontent.com/nix-community/nix-direnv/1.6.0/direnvrc&#34;</span> <span class=s2>&#34;sha256-FqqbUyxL8MZdXe5LkMgtNo95raZFbegFpl5k2+Pr
+</span><span class=s2>  Cow=&#34;</span>
+  <span class=k>fi</span>
 
  use flake
 </code></pre></div><p>Now, assuming you have <a href=https://github.com/nix-community/nix-direnv>nix-direnv</a> you will
@@ -120,15 +119,15 @@ nixpkgs-unstable. This isn&rsquo;t the only way to do this; you could have pinne
 particular version of hugo or awscliv2, but this is good enough for this simple project. A
 flake.lock file that describes how nix understands the dependencies is generated the first
 time you enter the directory:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-nix data-lang=nix>    <span style=color:#e6db74>&#34;nixpkgs&#34;</span>: {
-      <span style=color:#e6db74>&#34;locked&#34;</span>: {
-        <span style=color:#e6db74>&#34;lastModified&#34;</span>: <span style=color:#ae81ff>1644972330</span><span style=color:#f92672>,</span>
-        <span style=color:#e6db74>&#34;narHash&#34;</span>: <span style=color:#e6db74>&#34;sha256-6V2JFpTUzB9G+KcqtUR1yl7f6rd9495YrFECslEmbGw=&#34;</span><span style=color:#f92672>,</span>
-        <span style=color:#e6db74>&#34;owner&#34;</span>: <span style=color:#e6db74>&#34;NixOS&#34;</span><span style=color:#f92672>,</span>
-        <span style=color:#e6db74>&#34;repo&#34;</span>: <span style=color:#e6db74>&#34;nixpkgs&#34;</span><span style=color:#f92672>,</span>
-<span style=display:block;width:100%;background-color:#3c3d38>        <span style=color:#e6db74>&#34;rev&#34;</span>: <span style=color:#e6db74>&#34;19574af0af3ffaf7c9e359744ed32556f34536bd&#34;</span><span style=color:#f92672>,</span>
-</span>        <span style=color:#e6db74>&#34;type&#34;</span>: <span style=color:#e6db74>&#34;github&#34;</span>
-      }<span style=color:#f92672>,</span>
+<div class=highlight><pre tabindex=0 class=chroma><code class=language-nix data-lang=nix>    <span class=s2>&#34;nixpkgs&#34;</span><span class=p>:</span> <span class=p>{</span>
+      <span class=s2>&#34;locked&#34;</span><span class=p>:</span> <span class=p>{</span>
+        <span class=s2>&#34;lastModified&#34;</span><span class=p>:</span> <span class=mi>1644972330</span><span class=o>,</span>
+        <span class=s2>&#34;narHash&#34;</span><span class=p>:</span> <span class=s2>&#34;sha256-6V2JFpTUzB9G+KcqtUR1yl7f6rd9495YrFECslEmbGw=&#34;</span><span class=o>,</span>
+        <span class=s2>&#34;owner&#34;</span><span class=p>:</span> <span class=s2>&#34;NixOS&#34;</span><span class=o>,</span>
+        <span class=s2>&#34;repo&#34;</span><span class=p>:</span> <span class=s2>&#34;nixpkgs&#34;</span><span class=o>,</span>
+<span class=hl>        <span class=s2>&#34;rev&#34;</span><span class=p>:</span> <span class=s2>&#34;19574af0af3ffaf7c9e359744ed32556f34536bd&#34;</span><span class=o>,</span>
+</span>        <span class=s2>&#34;type&#34;</span><span class=p>:</span> <span class=s2>&#34;github&#34;</span>
+      <span class=p>}</span><span class=o>,</span>
 </code></pre></div><p>I&rsquo;ve abbreviated it, but you can see the git sha of the nixpkgs repo to which we are
 pinned. nixpkgs (<a href=https://github.com/nixpkgs>https://github.com/nixpkgs</a>) is the repo that holds our dependencies (and
 80k+ software packages for nix) and the instructions of how to build them for the nix
