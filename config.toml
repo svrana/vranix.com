@@ -36,6 +36,7 @@ enableRobotsTXT = true
 	avatar = "/fancypants.jpg"
   subtitle = "127.0.0.1"
   description = "Shaw Vrana's personal website"
+  socialShare = true
 
 [params.share]
   Twitter = true
