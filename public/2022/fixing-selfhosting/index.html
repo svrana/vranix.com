@@ -70,15 +70,15 @@ in
 </div>
 </header>
 <div class=post-content>
-<h1 id=even-nerds-do-not-want-to-run-their-own-servers>Even nerds do not want to run their own servers</h1>
+<h2 id=even-nerds-do-not-want-to-run-their-own-servers>Even nerds do not want to run their own servers</h2>
 <p>This is a quote from Moxie Marlinspike&rsquo;s post <a href=https://moxie.org/2022/01/07/web3-first-impressions.html>My first impressions of
 web3</a>. This article is
 great critique of web3. He makes a number of good points, but what I found most
 interesting was his assertion that people do not want to run their own servers and never
 will. And I cannot stop thinking about this and not b/c I think he&rsquo;s wrong.</p>
 <p>Moxie doesn&rsquo;t go into any detail but here are some of the problems.</p>
-<h1 id=networking>Networking</h1>
-<h2 id=dns>DNS</h2>
+<h2 id=networking>Networking</h2>
+<h3 id=dns>DNS</h3>
 <p>Most servers, and the ones Moxie is talking about, are ones that are meant to be
 interacted with outside of your own home. Most of us in the U.S. do not have a static IP,
 so you&rsquo;ve got to figure out how to get the domain name resolved as the underlying IP
@@ -106,7 +106,7 @@ accessed by people who you have not authorized, so will not work for everything 
 might like to host.</p>
 </li>
 </ol>
-<h2 id=security>Security</h2>
+<h3 id=security>Security</h3>
 <p>If you&rsquo;re running services over the public internet you will likely need to secure
 the connection via https. While it&rsquo;s possible to create free certificates that will be trusted by
 all browsers without warnings for free (thanks LetsEncrypt!) this is another area of pain.
@@ -114,7 +114,7 @@ The certs will need to be renewed occasionally. This is a common enough failure 
 the enterprise. You can figure it out but no one really wants to.</p>
 <p>If the service is only for your own use, Tailscale solves this problem as well as you
 don&rsquo;t need https at all.</p>
-<h1 id=storage>Storage</h1>
+<h2 id=storage>Storage</h2>
 <p>Storing data is easy. Making sure you can survive a disk failure is something else
 entirely. You can use some sort of RAID, but if your house burns down, you best have an
 off-site copy too.</p>
@@ -128,7 +128,7 @@ recently for their hardware solution and software platform. The basic idea is th
 everyone with one of these boxes stores everyone else&rsquo;s data so that it can be retrieved
 again if your box fails. This solution is squarely in the web3 space, backed by a token
 which aims to incentivize app developers to create apps that will run on the device.</p>
-<h1 id=disappearing-tech>Disappearing tech</h1>
+<h2 id=disappearing-tech>Disappearing tech</h2>
 <p>So, yeah, self-hosting is too much work. I&rsquo;d prefer not to have all my data backed up to
 Google but it&rsquo;s just the easiest option. Many of these problems are tractable and we will
 see companies come along and change the landscape in the future. Tailscale is an amazing
