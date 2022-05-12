@@ -1,0 +1,181 @@
+<!doctype html><html lang=en-us>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="chrome=1">
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=robots content="noodp">
+<link rel=prev href=https://vranix.com/2022/nix-devshells/>
+<link rel=canonical href=https://vranix.com/2022/fixing-selfhosting/>
+<link rel="shortcut icon" type=image/x-icon href=/favicon.ico>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png>
+<link rel=manifest href=/site.webmanifest>
+<link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5>
+<meta name=msapplication-TileColor content="#da532c">
+<meta name=theme-color content="#ffffff">
+<title>
+Fixing self-hosting | vranix
+</title>
+<meta name=title content="Fixing self-hosting | vranix">
+<link rel=stylesheet href=/font/iconfont.css>
+<link rel=stylesheet href=/css/main.min.css>
+<meta name=twitter:card content="summary">
+<meta name=twitter:title content="Fixing self-hosting">
+<meta name=twitter:description content="Even nerds do not want to run their own servers This is a quote from Moxie Marlinspike&rsquo;s post My first impressions of web3. This article is great critique of web3. He makes a number of good points, but what I found most interesting was his assertion that people do not want to run their own servers and never will. And I cannot stop thinking about this and not b/c I think he&rsquo;s wrong.">
+<script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Fixing self-hosting","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/vranix.com\/2022\/fixing-selfhosting\/"},"genre":"posts","wordcount":742,"url":"https:\/\/vranix.com\/2022\/fixing-selfhosting\/","datePublished":"2022-05-12T09:10:16-07:00","dateModified":"2022-05-12T09:10:16-07:00","description":""}</script></head>
+<body>
+<div class=wrapper>
+<nav class=navbar>
+<div class=container>
+<div class="navbar-header header-logo">
+<a href=https://vranix.com/>vranix</a>
+</div>
+<div class="menu navbar-right">
+<a class=menu-item href=/posts/ title>Blog</a>
+<a class=menu-item href=/about title>About</a>
+<a class=menu-item href=/resume title>Resume</a>
+<a href=javascript:void(0); class=theme-switch><i class="iconfont icon-sun"></i></a>&nbsp;
+</div>
+</div>
+</nav>
+<nav class=navbar-mobile id=nav-mobile style=display:none>
+<div class=container>
+<div class=navbar-header>
+<div> <a href=javascript:void(0); class=theme-switch><i class="iconfont icon-sun"></i></a>&nbsp;<a href=https://vranix.com/>vranix</a></div>
+<div class=menu-toggle>
+<span></span><span></span><span></span>
+</div>
+</div>
+<div class=menu id=mobile-menu>
+<a class=menu-item href=/posts/ title>Blog</a>
+<a class=menu-item href=/about title>About</a>
+<a class=menu-item href=/resume title>Resume</a>
+</div>
+</div>
+</nav>
+<main class=main>
+<div class=container>
+<article class=post-warp>
+<header class=post-header>
+<h1 class=post-title>Fixing self-hosting</h1>
+<div class=post-meta>
+Written by <a href=https://vranix.com/ rel=author>svrana</a> with ♥
+<span class=post-time>
+on <time datetime=2022-05-12>12 May 2022</time>
+</span>
+in
+<i class="iconfont icon-timer"></i>
+4 min
+</div>
+</header>
+<div class=post-content>
+<h1 id=even-nerds-do-not-want-to-run-their-own-servers>Even nerds do not want to run their own servers</h1>
+<p>This is a quote from Moxie Marlinspike&rsquo;s post <a href=https://moxie.org/2022/01/07/web3-first-impressions.html>My first impressions of
+web3</a>. This article is
+great critique of web3. He makes a number of good points, but what I found most
+interesting was his assertion that people do not want to run their own servers and never
+will. And I cannot stop thinking about this and not b/c I think he&rsquo;s wrong.</p>
+<p>Moxie doesn&rsquo;t go into any detail but here are some of the problems.</p>
+<h1 id=networking>Networking</h1>
+<h2 id=dns>DNS</h2>
+<p>Most servers, and the ones Moxie is talking about, are ones that are meant to be
+interacted with outside of your own home. Most of us in the U.S. do not have a static IP,
+so you&rsquo;ve got to figure out how to get the domain name resolved as the underlying IP
+address changes. There are number of ways to solve this or work around it:</p>
+<ol>
+<li>
+<p>Use the dynamic IP address and update your bookmarks as it changes. Ok, no, this is not a
+real solution.</p>
+</li>
+<li>
+<p>Use dynamic DNS service. This is a service that requires you to run a small piece of
+software that updates the IP address that your DNS entry points to. The best place to do
+this is on your router, but many routers do not support it or charge for it. Of course,
+you&rsquo;ll need to setup your own domain name for this too and setup the service such that
+it&rsquo;s able to change the DNS entry for you. This is all do-able if you&rsquo;re reading this, but
+no one wants to go through the hassle.</p>
+</li>
+<li>
+<p>If you only need access from your personal devices, you can use
+<a href=https://tailscale.com>Tailscale</a> to create a virtual network between your devices and
+your server. You can use the handy &ldquo;magic DNS&rdquo; feature such that tailscale will
+resolve a hostname to an IP address of your choosing. I.e., on my devices &ldquo;v.net&rdquo; resolves
+to an address on my local (tailscale) network. The downside is that these services cannot be
+accessed by people who you have not authorized, so will not work for everything that you
+might like to host.</p>
+</li>
+</ol>
+<h2 id=security>Security</h2>
+<p>If you&rsquo;re running services over the public internet you will likely need to secure
+the connection via https. While it&rsquo;s possible to create free certificates that will be trusted by
+all browsers without warnings for free (thanks LetsEncrypt!) this is another area of pain.
+The certs will need to be renewed occasionally. This is a common enough failure point in
+the enterprise. You can figure it out but no one really wants to.</p>
+<p>If the service is only for your own use, Tailscale solves this problem as well as you
+don&rsquo;t need https at all.</p>
+<h1 id=storage>Storage</h1>
+<p>Storing data is easy. Making sure you can survive a disk failure is something else
+entirely. You can use some sort of RAID, but if your house burns down, you best have an
+off-site copy too.</p>
+<p>There are plenty of backup solutions of course, but setting it up, ensuring that it continues to
+work, and restoring from the backup when it does fail is all work that no one really wants
+to do, even those of us that do this kind of thing for a living.</p>
+<p>There are companies that are attempting to solve this problem. One promising solution is
+<a href=https://fx.land/>Functionland</a> which ran an <a href=https://www.indiegogo.com/projects/box-first-free-forever-cloud-storage-alternative#/>indiegogo
+campaign</a>
+recently for their hardware solution and software platform. The basic idea is that
+everyone with one of these boxes stores everyone else&rsquo;s data so that it can be retrieved
+again if your box fails. This solution is squarely in the web3 space, backed by a token
+which aims to incentivize app developers to create apps that will run on the device.</p>
+<h1 id=disappearing-tech>Disappearing tech</h1>
+<p>So, yeah, self-hosting is too much work. I&rsquo;d prefer not to have all my data backed up to
+Google but it&rsquo;s just the easiest option. Many of these problems are tractable and we will
+see companies come along and change the landscape in the future. Tailscale is an amazing
+example of this. Perhaps Functionland will chip-away at the storage related problems. I&rsquo;ll
+be watching.</p>
+<p>I do hope we will all be self-hosting in the future, but if so the experience will have to
+more like installing a Nest thermostat or setting up a router or a new TV. Sure, none of
+these are experiences are particularly pleasant, but you follow the instructions, get
+it setup and forget about it.</p>
+</div>
+<div class=post-copyright>
+<p class=copyright-item>
+<span>Share:</span>
+<span>
+<a href="//twitter.com/share?url=https%3a%2f%2fvranix.com%2f2022%2ffixing-selfhosting%2f&text=Fixing%20self-hosting&via=" target=_blank title="Share on Twitter">
+<i class="iconfont icon-twitter"></i>
+</a>
+<a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fvranix.com%2f2022%2ffixing-selfhosting%2f" target=_blank title="Share on Facebook">
+<i class="iconfont icon-facebook"></i>
+</a>
+<a href="//reddit.com/submit?url=https%3a%2f%2fvranix.com%2f2022%2ffixing-selfhosting%2f&title=Fixing%20self-hosting" target=_blank title="Share on Reddit">
+<i class="iconfont icon-reddit"></i>
+</a>
+<a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fvranix.com%2f2022%2ffixing-selfhosting%2f&title=Fixing%20self-hosting" target=_blank title="Share on LinkedIn">
+<i class="iconfont icon-linkedin"></i>
+</a>
+<a href="//news.ycombinator.com/submitlink?u=https%3a%2f%2fvranix.com%2f2022%2ffixing-selfhosting%2f&description=Fixing%20self-hosting" target=_blank title="Share on Hacker News">
+<i class="iconfont icon-ycombinator"></i>
+</a>
+</span>
+</p>
+</div>
+<div class=post-tags>
+<section>
+<a href=javascript:window.history.back();>Back</a></span> ·
+<span><a href=https://vranix.com/>Home</a></span>
+</section>
+</div>
+<div class=post-nav>
+<a href=https://vranix.com/2022/nix-devshells/ class=prev rel=prev title="Nix dev shells from 10,000 feet"><i class="iconfont icon-dajiantou"></i>&nbsp;Nix dev shells from 10,000 feet</a>
+</div>
+<div class=post-comment>
+</div>
+</article>
+</div>
+</main>
+<script src=/js/vendor_no_gallery.min.js async></script>
+</div>
+</body>
+</html>
