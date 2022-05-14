@@ -1,16 +1,17 @@
 ---
-title: "Fixing self-hosting"
+title: "Problems with self-hosting"
 date: 2022-05-12T09:10:16-07:00
 draft: false
 ---
 
-## Even nerds do not want to run their own servers
+## Even nerds don't want to run their own servers
 
 This is a quote from Moxie Marlinspike's post [My first impressions of
 web3](https://moxie.org/2022/01/07/web3-first-impressions.html). This article is
 great critique of web3. He makes a number of good points, but what I found most
-interesting was his assertion that people do not want to run their own servers and never
-will. And I cannot stop thinking about this and not b/c I think he's wrong.
+interesting was his assertion that people do not want to run their own servers.
+And I cannot stop thinking about this and not b/c I think he's wrong, but b/c I think
+these challenges can be overcome.
 
 Moxie doesn't go into any detail but here are some of the problems.
 
