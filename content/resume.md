@@ -11,18 +11,18 @@ distributed systems, managing infrastructure at scale and functional languages.
 
 ### Experience
 
-#### {{<newtabref href="https://conductorone.com" title="ConductorOne">}}, Software Engineer (2020-2022)
+#### {{<newtabref href="https://conductorone.com" title="ConductorOne">}}, Founding Engineer (2020-2022)
 
-Helped bring up this identity management company with Go, Typescript & Protobufs.
+Full stack web development. Go, Typescript, gRPC.
 
-#### {{<newtabref href="https://synthesis.ai" title="Synthesis AI">}}, Head of Software Engineering (2019-2020)
+#### {{<newtabref href="https://synthesis.ai" title="Synthesis AI">}}, Founding Engineer - Head of Software Engineering (2019-2020)
 
-Built a scalable platform for synthetic data generation.
+Built a scalable platform for synthetic data generation. Go, AWS, Kubernetes, Pulumi.
 
 #### {{<newtabref href="https://wish.com" title="Wish">}}, Member of Technical Staff (2015-2019)
 
 Projects include product search, data pipeline construction, backend
-performance improvements and infrastructure automation.
+performance improvements and infrastructure automation. Go, Python, AWS
 
 #### {{<newtabref href="https://lookout.com" title="Lookout">}}, Senior Software Engineer (2012-2015)
 
@@ -31,9 +31,13 @@ development for the Lookout for Business team.
 
 #### {{<newtabref href="https://en.wikipedia.org/wiki/Riverbed_Technology" title="Riverbed Technology">}}, Member of Technical Staff (2005 - 2011)
 
-Linux kernel network engineer for the SteelHead wan optimization product,
-concentrating on network visibility. Maintenance and development of this
-transparent TCP proxy. Created and managed NetFlow integration and IPv6.
+Linux kernel network engineer for the SteelHead wan optimization product, concentrating on
+network visibility and integration. Maintenance and development of this transparent TCP
+proxy. Created and managed NetFlow integration and IPv6. C, Perl.
+
+#### {{<newtabref href="https://www.iii.com" title="Innovative Interfaces">}}, Senior / Software Engineer (2000 - 2005)
+
+Library management software. Java, C.
 
 ### Education
 
