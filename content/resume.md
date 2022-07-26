@@ -35,10 +35,6 @@ Linux kernel network engineer for the SteelHead wan optimization product, concen
 network visibility and integration. Maintenance and development of this transparent TCP
 proxy. Created and managed NetFlow integration and IPv6. C, Perl.
 
-#### {{<newtabref href="https://www.iii.com" title="Innovative Interfaces">}}, Senior / Software Engineer (2000 - 2005)
-
-Library management software. Java, C.
-
 ### Education
 
 Vanderbilt University, BS, Philosophy and Computer Science (1995-1999)
