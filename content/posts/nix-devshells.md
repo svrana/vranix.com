@@ -91,9 +91,23 @@ package manager.
 ## Faster
 
 Of course constructing your flake and .envrc is a lot of work, which is why I didn't do it
-by hand. Intead, I  ran [flakify](https://github.com/nix-community/nix-direnv#shell-integration). From there I
-just added my two dependencies to the dev shell. 'Course you have to have nix and
-nix-direnv installed.
+by hand. Intead, I  ran flakify (I simple bash script) which I stole from
+https://github.com/nix-community/nix-direnv, but has since been removed so here it is.
+
+```bash
+flakify() {
+  if [ ! -e flake.nix ]; then
+    nix flake new -t github:nix-community/nix-direnv .
+  elif [ ! -e .envrc ]; then
+    echo "use flake" > .envrc
+    direnv allow
+  fi
+  ${EDITOR:-vim} flake.nix
+}
+```
+
+From there I just added my two dependencies to the dev shell. 'Course you have to have nix
+and nix-direnv installed.
 
 
 ## This fixes nothing
