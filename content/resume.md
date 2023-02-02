@@ -13,15 +13,11 @@ distributed systems, managing infrastructure at scale and functional languages.
 
 #### {{<newtabref href="https://nucleuscloud.com" title="Nucleus Cloud">}}, Founding Engineer (2022-current)
 
-Making kubernetes approachable for small/medium sized teams.
-
-k8s, Go, Typescript, gRPC, eks@aws
+Making kubernetes approachable for small/medium sized teams. k8s, Go, Typescript, gRPC, eks@aws
 
 #### {{<newtabref href="https://conductorone.com" title="ConductorOne">}}, Founding Engineer (2020-2022)
 
-Simplifying access control.
-
-Full stack web development. Go, Typescript, gRPC.
+Simplifying access control & review. Go, Typescript, gRPC.
 
 #### {{<newtabref href="https://synthesis.ai" title="Synthesis AI">}}, Founding Engineer - Head of Software Engineering (2019-2020)
 
