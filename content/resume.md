@@ -11,7 +11,15 @@ distributed systems, managing infrastructure at scale and functional languages.
 
 ### Experience
 
+#### {{<newtabref href="https://nucleuscloud.com" title="Nucleus Cloud">}}, Founding Engineer (2022-current)
+
+Making kubernetes approachable for small/medium sized teams.
+
+k8s, Go, Typescript, gRPC, eks@aws
+
 #### {{<newtabref href="https://conductorone.com" title="ConductorOne">}}, Founding Engineer (2020-2022)
+
+Simplifying access control.
 
 Full stack web development. Go, Typescript, gRPC.
 
@@ -48,6 +56,6 @@ it was removed by Google. Code available on Github.
 
 ### Skills
 
-Experience with Go, Haskell, Kubernetes, Pulumi and others.
+Experience with Go, Haskell, Rust, Kubernetes, Pulumi and others.
 
 [pdf](https://hosted.vranix.com/shaw-vrana-resume.pdf)
