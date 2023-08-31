@@ -11,10 +11,6 @@ distributed systems, managing infrastructure at scale and functional languages.
 
 ### Experience
 
-#### {{<newtabref href="https://nucleuscloud.com" title="Nucleus Cloud">}}, Founding Engineer (2022-current)
-
-Making kubernetes approachable for small/medium sized teams. k8s, Go, Typescript, gRPC, eks@aws
-
 #### {{<newtabref href="https://conductorone.com" title="ConductorOne">}}, Founding Engineer (2020-2022)
 
 Simplifying access control & review. Go, Typescript, gRPC.
@@ -33,11 +29,13 @@ performance improvements and infrastructure automation. Go, Python, AWS
 Android development for the Lookout Mobile Security app and ruby backend web
 development for the Lookout for Business team.
 
-#### {{<newtabref href="https://en.wikipedia.org/wiki/Riverbed_Technology" title="Riverbed Technology">}}, Member of Technical Staff (2005 - 2011)
+#### {{<newtabref href="https://en.wikipedia.org/wiki/Riverbed_Technology" title="Riverbed Technology">}}, Member of Technical Staff (2005-2011)
 
 Linux kernel network engineer for the SteelHead wan optimization product, concentrating on
 network visibility and integration. Maintenance and development of this transparent TCP
 proxy. Created and managed NetFlow integration and IPv6. C, Perl.
+
+#### {{<newtabref href="https://iii.com" title="Innovative Interfaces">}}, Senior Software Engineer (2000-2005)
 
 ### Education
 
