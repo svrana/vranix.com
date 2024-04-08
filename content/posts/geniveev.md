@@ -6,8 +6,8 @@ draft: false
 
 I worked on a product with a microservice architecture for a while. As one does working
 in such an environment, I found myself creating a lot of little services. Each of these services
-was first described as a service in a protubuf file. The services were compiled into
-an interface which you would then implement- we were using golang. We also used a tool for injecting
+was first described as a service in a protobuf file. The services were compiled into
+an interface which you would then implement. We also used a tool for injecting
 dependencies to make creating these services easier.
 
 This is a long way for me to say that to start a new project, I would
