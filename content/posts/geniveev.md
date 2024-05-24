@@ -32,7 +32,7 @@ remove the drudgery and so I did. This became
 the format of the configuration file and how to use it, but the result is that in my
 project (with the example configuration file in the repo) I can now run
 
-```
+```sh
 geniveev service-stubs --service_name foo
 ```
 

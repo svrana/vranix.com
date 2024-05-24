@@ -1,1 +1,116 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>https://vranix.com/2024/geniveev/</loc><lastmod>2024-04-08T06:47:09-07:00</lastmod></url><url><loc>https://vranix.com/posts/</loc><lastmod>2024-04-08T06:47:09-07:00</lastmod></url><url><loc>https://vranix.com/</loc><lastmod>2024-04-08T06:47:09-07:00</lastmod></url><url><loc>https://vranix.com/2024/lua-highlighting-homemanager-vim/</loc><lastmod>2024-04-06T06:47:09-07:00</lastmod></url><url><loc>https://vranix.com/2022/fixing-selfhosting/</loc><lastmod>2022-05-12T09:10:16-07:00</lastmod></url><url><loc>https://vranix.com/2022/nix-devshells/</loc><lastmod>2022-03-09T12:37:53-08:00</lastmod></url><url><loc>https://vranix.com/about/</loc></url><url><loc>https://vranix.com/categories/</loc></url><url><loc>https://vranix.com/resume/</loc></url><url><loc>https://vranix.com/tags/</loc></url></urlset>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+    <url>
+      <loc>http://localhost:1313/2024/geniveev/</loc>
+      
+      <lastmod>2024-04-08T06:47:09-07:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://localhost:1313/posts/</loc>
+      
+      <lastmod>2024-04-08T06:47:09-07:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://localhost:1313/</loc>
+      
+      <lastmod>2024-04-08T06:47:09-07:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://localhost:1313/2024/lua-highlighting-homemanager-vim/</loc>
+      
+      <lastmod>2024-04-06T06:47:09-07:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://localhost:1313/2023/productive-dev-setup/</loc>
+      
+      <lastmod>2023-03-04T14:01:52-08:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://localhost:1313/2022/retrospective-one-iii/</loc>
+      
+      <lastmod>2022-05-13T19:20:35-07:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://localhost:1313/2022/fixing-selfhosting/</loc>
+      
+      <lastmod>2022-05-12T09:10:16-07:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://localhost:1313/2022/nix-devshells/</loc>
+      
+      <lastmod>2022-03-09T12:37:53-08:00</lastmod>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://localhost:1313/about/</loc>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://localhost:1313/categories/</loc>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://localhost:1313/resume/</loc>
+      
+      
+      
+      
+    </url>
+  
+    <url>
+      <loc>http://localhost:1313/tags/</loc>
+      
+      
+      
+      
+    </url>
+  
+</urlset>

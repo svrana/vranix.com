@@ -1,85 +1,425 @@
-<!doctype html><html lang=en-us><head><link rel=webmention href=https://webmention.io/vranix.com/webmention><link rel=pingback href=https://webmention.io/vranix.com/xmlrpc><meta charset=utf-8><meta http-equiv=x-ua-compatible content="chrome=1"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><link rel=next href=https://vranix.com/2022/fixing-selfhosting/><link rel=canonical href=https://vranix.com/2022/nix-devshells/><link rel='shortcut icon' type=image/x-icon href=/favicon.ico><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><meta name=msapplication-TileColor content="#da532c"><meta name=theme-color content="#ffffff"><title>Nix dev shells from 10,000 feet | vranix</title><meta name=title content="Nix dev shells from 10,000 feet | vranix"><link rel=stylesheet href=/font/iconfont.css><link rel=stylesheet href=/css/main.min.css><meta name=twitter:card content="summary"><meta name=twitter:title content="Nix dev shells from 10,000 feet"><meta name=twitter:description content="Setting the scene After neglecting this small place on the internet for years, I cloned the repo with the hope of quickly updating my resume. This site is constructed with Hugo, which is a static site generator written in golang. Anyway, I needed to install that too, so I edited my home-manager configuration and switched, i.e., I installed it.
-There was an attempt First thing I tried was running &ldquo;hugo serve&rdquo; which starts a web server and serves the content of your hugo project so changes can be seen as you make them."><script type=application/ld+json>{"@context":"http://schema.org","@type":"BlogPosting","headline":"Nix dev shells from 10,000 feet","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/vranix.com\/2022\/nix-devshells\/"},"genre":"posts","wordcount":635,"url":"https:\/\/vranix.com\/2022\/nix-devshells\/","datePublished":"2022-03-09T12:37:53-08:00","dateModified":"2022-03-09T12:37:53-08:00","description":""}</script><style>.chroma{color:#93a1a1;background-color:#073642}.chroma .x{color:#cb4b16}.chroma .err{}.chroma .lntd{vertical-align:top;padding:0;margin:0;border:0}.chroma .lntable{border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block}.chroma .hl{width:100%;background-color:#ffc;color:#495050}.chroma .lnt{margin-right:.4em;padding:0 .4em;color:#495050}.chroma .ln{margin-right:.4em;padding:0 .4em;color:#495050}.chroma .k{color:#719e07}.chroma .kc{color:#cb4b16}.chroma .kd{color:#268bd2}.chroma .kn{color:#719e07}.chroma .kp{color:#719e07}.chroma .kr{color:#268bd2}.chroma .kt{color:#dc322f}.chroma .n{}.chroma .na{}.chroma .nb{color:#b58900}.chroma .bp{color:#268bd2}.chroma .nc{color:#268bd2}.chroma .no{color:#cb4b16}.chroma .nd{color:#268bd2}.chroma .ni{color:#cb4b16}.chroma .ne{color:#cb4b16}.chroma .nf{color:#268bd2}.chroma .fm{}.chroma .nl{}.chroma .nn{}.chroma .nx{}.chroma .py{}.chroma .nt{color:#268bd2}.chroma .nv{color:#268bd2}.chroma .vc{}.chroma .vg{}.chroma .vi{}.chroma .vm{}.chroma .l{}.chroma .ld{}.chroma .s{color:#2aa198}.chroma .sa{color:#2aa198}.chroma .sb{color:#586e75}.chroma .sc{color:#2aa198}.chroma .dl{color:#2aa198}.chroma .sd{}.chroma .s2{color:#2aa198}.chroma .se{color:#cb4b16}.chroma .sh{}.chroma .si{color:#2aa198}.chroma .sx{color:#2aa198}.chroma .sr{color:#dc322f}.chroma .s1{color:#2aa198}.chroma .ss{color:#2aa198}.chroma .m{color:#2aa198}.chroma .mb{color:#2aa198}.chroma .mf{color:#2aa198}.chroma .mh{color:#2aa198}.chroma .mi{color:#2aa198}.chroma .il{color:#2aa198}.chroma .mo{color:#2aa198}.chroma .o{color:#719e07}.chroma .ow{color:#719e07}.chroma .p{}.chroma .c{color:#586e75}.chroma .ch{color:#586e75}.chroma .cm{color:#586e75}.chroma .c1{color:#586e75}.chroma .cs{color:#719e07}.chroma .cp{color:#719e07}.chroma .cpf{color:#719e07}.chroma .g{}.chroma .gd{color:#dc322f}.chroma .ge{font-style:italic}.chroma .gr{color:#dc322f;font-weight:700}.chroma .gh{color:#cb4b16}.chroma .gi{color:#719e07}.chroma .go{}.chroma .gp{}.chroma .gs{font-weight:700}.chroma .gu{color:#268bd2}.chroma .gt{}.chroma .gl{}.chroma .w{}</style></head><body><div class=wrapper><nav class=navbar><div class=container><div class="navbar-header header-logo"><a href=https://vranix.com/>vranix</a></div><div class="menu navbar-right"><a class=menu-item href=/posts/ title>Blog</a>
-<a class=menu-item href=/about title>About</a>
-<a class=menu-item href=/resume title>Resume</a>
-<a href=javascript:void(0); class=theme-switch><i class="iconfont icon-sun"></i></a>&nbsp;</div></div></nav><nav class=navbar-mobile id=nav-mobile style=display:none><div class=container><div class=navbar-header><div><a href=javascript:void(0); class=theme-switch><i class="iconfont icon-sun"></i></a>&nbsp;<a href=https://vranix.com/>vranix</a></div><div class=menu-toggle><span></span><span></span><span></span></div></div><div class=menu id=mobile-menu><a class=menu-item href=/posts/ title>Blog</a>
-<a class=menu-item href=/about title>About</a>
-<a class=menu-item href=/resume title>Resume</a></div></div></nav><main class=main><div class=container><article class=post-warp><header class=post-header><h1 class=post-title>Nix dev shells from 10,000 feet</h1><div class=post-meta>Written by <a href=https://vranix.com/ rel=author>svrana</a> with ♥
-<span class=post-time>on <time datetime=2022-03-09>9 March 2022</time></span>
-in
-<i class="iconfont icon-timer"></i>
-3 min</div></header><div class=post-content><h2 id=setting-the-scene>Setting the scene</h2><p>After neglecting this small place on the internet for years, I cloned the repo with the
-hope of quickly updating my resume. This site is constructed with <a href=https://gohugo.io>Hugo</a>,
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <link rel="webmention" href="https://webmention.io/vranix.com/webmention" />
+<link rel="pingback" href="https://webmention.io/vranix.com/xmlrpc" />
+
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  
+  <link rel="next" href="http://localhost:1313/2022/fixing-selfhosting/" />
+  <link rel="canonical" href="http://localhost:1313/2022/nix-devshells/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Nix dev shells from 10,000 feet | vranix
+       
+  </title>
+  <meta name="title" content="Nix dev shells from 10,000 feet | vranix">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Nix dev shells from 10,000 feet"/>
+<meta name="twitter:description" content="Setting the scene After neglecting this small place on the internet for years, I cloned the repo with the hope of quickly updating my resume. This site is constructed with Hugo, which is a static site generator written in golang. Anyway, I needed to install that too, so I edited my home-manager configuration and switched, i.e., I installed it.
+There was an attempt First thing I tried was running &ldquo;hugo serve&rdquo; which starts a web server and serves the content of your hugo project so changes can be seen as you make them."/>
+
+  <script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Nix dev shells from 10,000 feet",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "http:\/\/localhost:1313\/2022\/nix-devshells\/"
+  },
+  
+  "genre": "posts",
+  
+  "wordcount":  635 ,
+  "url": "http:\/\/localhost:1313\/2022\/nix-devshells\/",
+  "datePublished": "2022-03-09T12:37:53-08:00",
+  "dateModified": "2022-03-09T12:37:53-08:00",
+  
+  
+  
+  "description": ""
+}
+</script><style>
+    /* Background */ .chroma { color: #93a1a1; background-color: #073642}
+/* Other */ .chroma .x { color: #cb4b16 }
+/* Error */ .chroma .err {  }
+/* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
+/* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; width: auto; overflow: auto; display: block; }
+/* LineHighlight */ .chroma .hl { width: 100%;background-color: #ffffcc;color: #495050 }
+/* LineNumbersTable */ .chroma .lnt { margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #495050 }
+/* LineNumbers */ .chroma .ln { margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #495050 }
+/* Keyword */ .chroma .k { color: #719e07 }
+/* KeywordConstant */ .chroma .kc { color: #cb4b16 }
+/* KeywordDeclaration */ .chroma .kd { color: #268bd2 }
+/* KeywordNamespace */ .chroma .kn { color: #719e07 }
+/* KeywordPseudo */ .chroma .kp { color: #719e07 }
+/* KeywordReserved */ .chroma .kr { color: #268bd2 }
+/* KeywordType */ .chroma .kt { color: #dc322f }
+/* Name */ .chroma .n {  }
+/* NameAttribute */ .chroma .na {  }
+/* NameBuiltin */ .chroma .nb { color: #b58900 }
+/* NameBuiltinPseudo */ .chroma .bp { color: #268bd2 }
+/* NameClass */ .chroma .nc { color: #268bd2 }
+/* NameConstant */ .chroma .no { color: #cb4b16 }
+/* NameDecorator */ .chroma .nd { color: #268bd2 }
+/* NameEntity */ .chroma .ni { color: #cb4b16 }
+/* NameException */ .chroma .ne { color: #cb4b16 }
+/* NameFunction */ .chroma .nf { color: #268bd2 }
+/* NameFunctionMagic */ .chroma .fm {  }
+/* NameLabel */ .chroma .nl {  }
+/* NameNamespace */ .chroma .nn {  }
+/* NameOther */ .chroma .nx {  }
+/* NameProperty */ .chroma .py {  }
+/* NameTag */ .chroma .nt { color: #268bd2 }
+/* NameVariable */ .chroma .nv { color: #268bd2 }
+/* NameVariableClass */ .chroma .vc {  }
+/* NameVariableGlobal */ .chroma .vg {  }
+/* NameVariableInstance */ .chroma .vi {  }
+/* NameVariableMagic */ .chroma .vm {  }
+/* Literal */ .chroma .l {  }
+/* LiteralDate */ .chroma .ld {  }
+/* LiteralString */ .chroma .s { color: #2aa198 }
+/* LiteralStringAffix */ .chroma .sa { color: #2aa198 }
+/* LiteralStringBacktick */ .chroma .sb { color: #586e75 }
+/* LiteralStringChar */ .chroma .sc { color: #2aa198 }
+/* LiteralStringDelimiter */ .chroma .dl { color: #2aa198 }
+/* LiteralStringDoc */ .chroma .sd {  }
+/* LiteralStringDouble */ .chroma .s2 { color: #2aa198 }
+/* LiteralStringEscape */ .chroma .se { color: #cb4b16 }
+/* LiteralStringHeredoc */ .chroma .sh {  }
+/* LiteralStringInterpol */ .chroma .si { color: #2aa198 }
+/* LiteralStringOther */ .chroma .sx { color: #2aa198 }
+/* LiteralStringRegex */ .chroma .sr { color: #dc322f }
+/* LiteralStringSingle */ .chroma .s1 { color: #2aa198 }
+/* LiteralStringSymbol */ .chroma .ss { color: #2aa198 }
+/* LiteralNumber */ .chroma .m { color: #2aa198 }
+/* LiteralNumberBin */ .chroma .mb { color: #2aa198 }
+/* LiteralNumberFloat */ .chroma .mf { color: #2aa198 }
+/* LiteralNumberHex */ .chroma .mh { color: #2aa198 }
+/* LiteralNumberInteger */ .chroma .mi { color: #2aa198 }
+/* LiteralNumberIntegerLong */ .chroma .il { color: #2aa198 }
+/* LiteralNumberOct */ .chroma .mo { color: #2aa198 }
+/* Operator */ .chroma .o { color: #719e07 }
+/* OperatorWord */ .chroma .ow { color: #719e07 }
+/* Punctuation */ .chroma .p {  }
+/* Comment */ .chroma .c { color: #586e75 }
+/* CommentHashbang */ .chroma .ch { color: #586e75 }
+/* CommentMultiline */ .chroma .cm { color: #586e75 }
+/* CommentSingle */ .chroma .c1 { color: #586e75 }
+/* CommentSpecial */ .chroma .cs { color: #719e07 }
+/* CommentPreproc */ .chroma .cp { color: #719e07 }
+/* CommentPreprocFile */ .chroma .cpf { color: #719e07 }
+/* Generic */ .chroma .g {  }
+/* GenericDeleted */ .chroma .gd { color: #dc322f }
+/* GenericEmph */ .chroma .ge { font-style: italic }
+/* GenericError */ .chroma .gr { color: #dc322f; font-weight: bold }
+/* GenericHeading */ .chroma .gh { color: #cb4b16 }
+/* GenericInserted */ .chroma .gi { color: #719e07 }
+/* GenericOutput */ .chroma .go {  }
+/* GenericPrompt */ .chroma .gp {  }
+/* GenericStrong */ .chroma .gs { font-weight: bold }
+/* GenericSubheading */ .chroma .gu { color: #268bd2 }
+/* GenericTraceback */ .chroma .gt {  }
+/* GenericUnderline */ .chroma .gl {  }
+/* TextWhitespace */ .chroma .w {  }
+
+  </style></head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="http://localhost:1313/">vranix</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a class="menu-item" href="/resume" title="">Resume</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="http://localhost:1313/">vranix</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a class="menu-item" href="/resume" title="">Resume</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp">
+    <header class="post-header">
+        <h1 class="post-title">Nix dev shells from 10,000 feet</h1>
+        <div class="post-meta">
+            Written by <a href="http://localhost:1313/" rel="author">svrana</a> with ♥
+                <span class="post-time">
+                    on <time datetime=2022-03-09 >9 March 2022</time>
+                </span>
+                in
+                
+                <i class="iconfont icon-timer"></i>
+                3 min
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+
+          
+          
+          
+
+          
+          
+          
+
+          <h2 id="setting-the-scene">Setting the scene</h2>
+<p>After neglecting this small place on the internet for years, I cloned the repo with the
+hope of quickly updating my resume. This site is constructed with <a href="https://gohugo.io">Hugo</a>,
 which is a static site generator written in golang. Anyway, I needed to install that too, so I
-edited my <a href=https://github.com/nix-community/home-manager>home-manager</a> configuration and <a href=https://github.com/svrana/nix-home/blob/main/Makefile#L26>switched</a>,
-i.e., I installed it.</p><h2 id=there-was-an-attempt>There was an attempt</h2><p>First thing I tried was running &ldquo;hugo serve&rdquo; which starts a web server and serves the
-content of your hugo project so changes can be seen as you make them. But that failed. I
+edited my <a href="https://github.com/nix-community/home-manager">home-manager</a> configuration and <a href="https://github.com/svrana/nix-home/blob/main/Makefile#L26">switched</a>,
+i.e., I installed it.</p>
+<h2 id="there-was-an-attempt">There was an attempt</h2>
+<p>First thing I tried was running &ldquo;hugo serve&rdquo; which starts a web server and serves the
+content of your hugo project so changes can be seen as you make them.  But that failed. I
 don&rsquo;t remember the errors; it&rsquo;s not important, I knew what happened- years had passed,
 non-backward compatible changes had been made to hugo and something I was doing no longer worked.
 That&rsquo;s one way of putting it. The more correct way of putting it is that I was using a
 much newer version of hugo for a website that was created using a previous version. This was
-my own mistake and this wasn&rsquo;t going to happen again. This time I would fix the glitch.</p><h2 id=enter-nix>Enter Nix</h2><p>I created a flake.nix in the root of my project directory with the following contents.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-nix data-lang=nix><span class=line><span class=cl><span class=p>{</span>
-</span></span><span class=line><span class=cl>  <span class=n>description</span> <span class=o>=</span> <span class=s2>&#34;my hugo flake with a shell&#34;</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=n>inputs</span><span class=o>.</span><span class=n>nixpkgs</span><span class=o>.</span><span class=n>url</span> <span class=o>=</span> <span class=s2>&#34;github:NixOS/nixpkgs/nixpkgs-unstable&#34;</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>  <span class=n>inputs</span><span class=o>.</span><span class=n>flake-utils</span><span class=o>.</span><span class=n>url</span> <span class=o>=</span> <span class=s2>&#34;github:numtide/flake-utils&#34;</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl>  <span class=n>outputs</span> <span class=o>=</span> <span class=p>{</span> <span class=n>self</span><span class=o>,</span> <span class=n>nixpkgs</span><span class=o>,</span> <span class=n>flake-utils</span> <span class=p>}:</span>
-</span></span><span class=line><span class=cl>    <span class=n>flake-utils</span><span class=o>.</span><span class=n>lib</span><span class=o>.</span><span class=n>eachDefaultSystem</span> <span class=p>(</span><span class=n>system</span><span class=p>:</span>
-</span></span><span class=line><span class=cl>      <span class=k>let</span>
-</span></span><span class=line><span class=cl>        <span class=n>pkgs</span> <span class=o>=</span> <span class=n>nixpkgs</span><span class=o>.</span><span class=n>legacyPackages</span><span class=o>.</span><span class=si>${</span><span class=n>system</span><span class=si>}</span><span class=p>;</span>
-</span></span><span class=line><span class=cl>      <span class=k>in</span>
-</span></span><span class=line><span class=cl>      <span class=p>{</span>
-</span></span><span class=line><span class=cl>        <span class=n>devShell</span> <span class=o>=</span> <span class=n>pkgs</span><span class=o>.</span><span class=n>mkShell</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>          <span class=n>nativeBuildInputs</span> <span class=o>=</span> <span class=p>[</span> <span class=n>pkgs</span><span class=o>.</span><span class=n>bashInteractive</span> <span class=p>];</span>
-</span></span><span class="line hl"><span class=cl>          <span class=n>buildInputs</span> <span class=o>=</span> <span class=k>with</span> <span class=n>pkgs</span><span class=p>;</span> <span class=p>[</span> <span class=n>hugo</span> <span class=n>awscli2</span> <span class=p>];</span>
-</span></span><span class=line><span class=cl>        <span class=p>};</span>
-</span></span><span class=line><span class=cl>      <span class=p>});</span>
-</span></span><span class=line><span class=cl><span class=p>}</span>
+my own mistake and this wasn&rsquo;t going to happen again. This time I would fix the glitch.</p>
+<h2 id="enter-nix">Enter Nix</h2>
+<p>I created a flake.nix in the root of my project directory with the following contents.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-nix" data-lang="nix"><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">  <span class="n">description</span> <span class="o">=</span> <span class="s2">&#34;my hugo flake with a shell&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">inputs</span><span class="o">.</span><span class="n">nixpkgs</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;github:NixOS/nixpkgs/nixpkgs-unstable&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="n">inputs</span><span class="o">.</span><span class="n">flake-utils</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s2">&#34;github:numtide/flake-utils&#34;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="n">outputs</span> <span class="o">=</span> <span class="p">{</span> <span class="n">self</span><span class="o">,</span> <span class="n">nixpkgs</span><span class="o">,</span> <span class="n">flake-utils</span> <span class="p">}:</span>
+</span></span><span class="line"><span class="cl">    <span class="n">flake-utils</span><span class="o">.</span><span class="n">lib</span><span class="o">.</span><span class="n">eachDefaultSystem</span> <span class="p">(</span><span class="n">system</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl">      <span class="k">let</span>
+</span></span><span class="line"><span class="cl">        <span class="n">pkgs</span> <span class="o">=</span> <span class="n">nixpkgs</span><span class="o">.</span><span class="n">legacyPackages</span><span class="o">.</span><span class="si">${</span><span class="n">system</span><span class="si">}</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">      <span class="k">in</span>
+</span></span><span class="line"><span class="cl">      <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="n">devShell</span> <span class="o">=</span> <span class="n">pkgs</span><span class="o">.</span><span class="n">mkShell</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">          <span class="n">nativeBuildInputs</span> <span class="o">=</span> <span class="p">[</span> <span class="n">pkgs</span><span class="o">.</span><span class="n">bashInteractive</span> <span class="p">];</span>
+</span></span><span class="line hl"><span class="cl">          <span class="n">buildInputs</span> <span class="o">=</span> <span class="k">with</span> <span class="n">pkgs</span><span class="p">;</span> <span class="p">[</span> <span class="n">hugo</span> <span class="n">awscli2</span> <span class="p">];</span>
+</span></span><span class="line"><span class="cl">        <span class="p">};</span>
+</span></span><span class="line"><span class="cl">      <span class="p">});</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><p>This flake isn&rsquo;t any good. I don&rsquo;t even automate the build, but it does what exactly what
-I need. It pins the dependencies I need to build and deploy my project, hugo and awscli2.</p><p>I also added a .envrc file with the following contents:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl> <span class=k>if</span> ! has nix_direnv_version <span class=o>||</span> ! nix_direnv_version 1.6.0<span class=p>;</span> <span class=k>then</span>
-</span></span><span class=line><span class=cl>      source_url <span class=s2>&#34;https://raw.githubusercontent.com/nix-community/nix-direnv/1.6.0/direnvrc&#34;</span> <span class=s2>&#34;sha256-FqqbUyxL8MZdXe5LkMgtNo95raZFbegFpl5k2+Pr
-</span></span></span><span class=line><span class=cl><span class=s2>  Cow=&#34;</span>
-</span></span><span class=line><span class=cl>  <span class=k>fi</span>
-</span></span><span class=line><span class=cl>
-</span></span><span class=line><span class=cl> use flake
-</span></span></code></pre></div><p>Now, assuming you have <a href=https://github.com/nix-community/nix-direnv>nix-direnv</a> you will
+I need. It pins the dependencies I need to build and deploy my project, hugo and awscli2.</p>
+<p>I also added a .envrc file with the following contents:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl"> <span class="k">if</span> ! has nix_direnv_version <span class="o">||</span> ! nix_direnv_version 1.6.0<span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">      source_url <span class="s2">&#34;https://raw.githubusercontent.com/nix-community/nix-direnv/1.6.0/direnvrc&#34;</span> <span class="s2">&#34;sha256-FqqbUyxL8MZdXe5LkMgtNo95raZFbegFpl5k2+Pr
+</span></span></span><span class="line"><span class="cl"><span class="s2">  Cow=&#34;</span>
+</span></span><span class="line"><span class="cl">  <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"> use flake
+</span></span></code></pre></div><p>Now, assuming you have <a href="https://github.com/nix-community/nix-direnv">nix-direnv</a> you will
 be dropped into a shell with your dependencies each time you enter your project directory.
 In this particular case I&rsquo;m using the version numbers of hugo and awscli2 as supplied by
 nixpkgs-unstable. This isn&rsquo;t the only way to do this; you could have pinned to a
 particular version of hugo or awscliv2, but this is good enough for this simple project. A
 flake.lock file that describes how nix understands the dependencies is generated the first
-time you enter the directory:</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-nix data-lang=nix><span class=line><span class=cl>    <span class=s2>&#34;nixpkgs&#34;</span><span class=p>:</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>      <span class=s2>&#34;locked&#34;</span><span class=p>:</span> <span class=p>{</span>
-</span></span><span class=line><span class=cl>        <span class=s2>&#34;lastModified&#34;</span><span class=p>:</span> <span class=mi>1644972330</span><span class=o>,</span>
-</span></span><span class=line><span class=cl>        <span class=s2>&#34;narHash&#34;</span><span class=p>:</span> <span class=s2>&#34;sha256-6V2JFpTUzB9G+KcqtUR1yl7f6rd9495YrFECslEmbGw=&#34;</span><span class=o>,</span>
-</span></span><span class=line><span class=cl>        <span class=s2>&#34;owner&#34;</span><span class=p>:</span> <span class=s2>&#34;NixOS&#34;</span><span class=o>,</span>
-</span></span><span class=line><span class=cl>        <span class=s2>&#34;repo&#34;</span><span class=p>:</span> <span class=s2>&#34;nixpkgs&#34;</span><span class=o>,</span>
-</span></span><span class="line hl"><span class=cl>        <span class=s2>&#34;rev&#34;</span><span class=p>:</span> <span class=s2>&#34;19574af0af3ffaf7c9e359744ed32556f34536bd&#34;</span><span class=o>,</span>
-</span></span><span class=line><span class=cl>        <span class=s2>&#34;type&#34;</span><span class=p>:</span> <span class=s2>&#34;github&#34;</span>
-</span></span><span class=line><span class=cl>      <span class=p>}</span><span class=o>,</span>
+time you enter the directory:</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-nix" data-lang="nix"><span class="line"><span class="cl">    <span class="s2">&#34;nixpkgs&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="s2">&#34;locked&#34;</span><span class="p">:</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;lastModified&#34;</span><span class="p">:</span> <span class="mi">1644972330</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;narHash&#34;</span><span class="p">:</span> <span class="s2">&#34;sha256-6V2JFpTUzB9G+KcqtUR1yl7f6rd9495YrFECslEmbGw=&#34;</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;owner&#34;</span><span class="p">:</span> <span class="s2">&#34;NixOS&#34;</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;repo&#34;</span><span class="p">:</span> <span class="s2">&#34;nixpkgs&#34;</span><span class="o">,</span>
+</span></span><span class="line hl"><span class="cl">        <span class="s2">&#34;rev&#34;</span><span class="p">:</span> <span class="s2">&#34;19574af0af3ffaf7c9e359744ed32556f34536bd&#34;</span><span class="o">,</span>
+</span></span><span class="line"><span class="cl">        <span class="s2">&#34;type&#34;</span><span class="p">:</span> <span class="s2">&#34;github&#34;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">}</span><span class="o">,</span>
 </span></span></code></pre></div><p>I&rsquo;ve abbreviated it, but you can see the git sha of the nixpkgs repo to which we are
-pinned. nixpkgs (<a href=https://github.com/nixpkgs>https://github.com/nixpkgs</a>) is the repo that holds our dependencies (and
+pinned. nixpkgs (<a href="https://github.com/nixpkgs">https://github.com/nixpkgs</a>) is the repo that holds our dependencies (and
 80k+ software packages for nix) and the instructions of how to build them for the nix
-package manager.</p><h2 id=faster>Faster</h2><p>Of course constructing your flake and .envrc is a lot of work, which is why I didn&rsquo;t do it
-by hand. Intead, I ran flakify (I simple bash script) which I stole from
-<a href=https://github.com/nix-community/nix-direnv>https://github.com/nix-community/nix-direnv</a>, but has since been removed so here it is.</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>flakify<span class=o>()</span> <span class=o>{</span>
-</span></span><span class=line><span class=cl>  <span class=k>if</span> <span class=o>[</span> ! -e flake.nix <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
-</span></span><span class=line><span class=cl>    nix flake new -t github:nix-community/nix-direnv .
-</span></span><span class=line><span class=cl>  <span class=k>elif</span> <span class=o>[</span> ! -e .envrc <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
-</span></span><span class=line><span class=cl>    <span class=nb>echo</span> <span class=s2>&#34;use flake&#34;</span> &gt; .envrc
-</span></span><span class=line><span class=cl>    direnv allow
-</span></span><span class=line><span class=cl>  <span class=k>fi</span>
-</span></span><span class=line><span class=cl>  <span class=si>${</span><span class=nv>EDITOR</span><span class=k>:-</span><span class=nv>vim</span><span class=si>}</span> flake.nix
-</span></span><span class=line><span class=cl><span class=o>}</span>
+package manager.</p>
+<h2 id="faster">Faster</h2>
+<p>Of course constructing your flake and .envrc is a lot of work, which is why I didn&rsquo;t do it
+by hand. Intead, I  ran flakify (I simple bash script) which I stole from
+<a href="https://github.com/nix-community/nix-direnv">https://github.com/nix-community/nix-direnv</a>, but has since been removed so here it is.</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">flakify<span class="o">()</span> <span class="o">{</span>
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="o">[</span> ! -e flake.nix <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    nix flake new -t github:nix-community/nix-direnv .
+</span></span><span class="line"><span class="cl">  <span class="k">elif</span> <span class="o">[</span> ! -e .envrc <span class="o">]</span><span class="p">;</span> <span class="k">then</span>
+</span></span><span class="line"><span class="cl">    <span class="nb">echo</span> <span class="s2">&#34;use flake&#34;</span> &gt; .envrc
+</span></span><span class="line"><span class="cl">    direnv allow
+</span></span><span class="line"><span class="cl">  <span class="k">fi</span>
+</span></span><span class="line"><span class="cl">  <span class="si">${</span><span class="nv">EDITOR</span><span class="k">:-</span><span class="nv">vim</span><span class="si">}</span> flake.nix
+</span></span><span class="line"><span class="cl"><span class="o">}</span>
 </span></span></code></pre></div><p>From there I just added my two dependencies to the dev shell. &lsquo;Course you have to have nix
-and nix-direnv installed.</p><h2 id=this-fixes-nothing>This fixes nothing</h2><p>So, yeah, I still had to change my website code to work with the new version of hugo I
+and nix-direnv installed.</p>
+<h2 id="this-fixes-nothing">This fixes nothing</h2>
+<p>So, yeah, I still had to change my website code to work with the new version of hugo I
 pulled in from nixpkgs. But from now on, I can choose when I want to do that, by
-updating the dependencies at a time of my choosing.</p><h2 id=afterward>Afterward</h2><p>Nix flakes provide a lot more than developer shells. If you&rsquo;d like to learn more, check
-out Xe&rsquo;s <a href=https://christine.website/blog/nix-flakes-1-2022-02-21>intro to flakes</a> and
-follow that up with xer <a href=https://christine.website/blog/nix-flakes-2-2022-02-27>flake packages</a>.</p></div><div class=post-copyright><p class=copyright-item><span>Share:</span>
-<span><a href="//twitter.com/share?url=https%3a%2f%2fvranix.com%2f2022%2fnix-devshells%2f&text=Nix%20dev%20shells%20from%2010%2c000%20feet&via=" target=_blank title="Share on Twitter"><i class="iconfont icon-twitter"></i></a>
-<a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fvranix.com%2f2022%2fnix-devshells%2f" target=_blank title="Share on Facebook"><i class="iconfont icon-facebook"></i></a>
-<a href="//reddit.com/submit?url=https%3a%2f%2fvranix.com%2f2022%2fnix-devshells%2f&title=Nix%20dev%20shells%20from%2010%2c000%20feet" target=_blank title="Share on Reddit"><i class="iconfont icon-reddit"></i></a>
-<a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fvranix.com%2f2022%2fnix-devshells%2f&title=Nix%20dev%20shells%20from%2010%2c000%20feet" target=_blank title="Share on LinkedIn"><i class="iconfont icon-linkedin"></i></a>
-<a href="//news.ycombinator.com/submitlink?u=https%3a%2f%2fvranix.com%2f2022%2fnix-devshells%2f&description=Nix%20dev%20shells%20from%2010%2c000%20feet" target=_blank title="Share on Hacker News"><i class="iconfont icon-ycombinator"></i></a></span></p></div><div class=post-tags><section><a href=javascript:window.history.back();>Back</a></span> ·
-<span><a href=https://vranix.com/>Home</a></span></section></div><div class=post-nav><a href=https://vranix.com/2022/fixing-selfhosting/ class=next rel=next title="Problems with self-hosting">Problems with self-hosting&nbsp;<i class="iconfont icon-xiaojiantou"></i></a></div><div class=post-comment></div></article></div></main><script src=/js/vendor_no_gallery.min.js async></script></div></body></html>
+updating the dependencies at a time of my choosing.</p>
+<h2 id="afterward">Afterward</h2>
+<p>Nix flakes provide a lot more than developer shells. If you&rsquo;d like to learn more, check
+out Xe&rsquo;s <a href="https://christine.website/blog/nix-flakes-1-2022-02-21">intro to flakes</a> and
+follow that up with xer <a href="https://christine.website/blog/nix-flakes-2-2022-02-27">flake packages</a>.</p>
+
+    </div>
+
+    <div class="post-copyright">
+            <p class="copyright-item">
+                
+                <span>Share:</span>
+                <span>
+
+      
+        <a href="//twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2f2022%2fnix-devshells%2f&amp;text=Nix%20dev%20shells%20from%2010%2c000%20feet&amp;via=" target="_blank" title="Share on Twitter">
+          <i class="iconfont icon-twitter"></i>
+        </a>
+        
+      
+      
+        <a href="//www.facebook.com/sharer/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2f2022%2fnix-devshells%2f" target="_blank" title="Share on Facebook">
+          <i class="iconfont icon-facebook"></i>
+        </a>
+        
+      
+      
+        <a href="//reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2f2022%2fnix-devshells%2f&amp;title=Nix%20dev%20shells%20from%2010%2c000%20feet" target="_blank" title="Share on Reddit">
+          <i class="iconfont icon-reddit"></i>
+        </a>
+        
+      
+      
+        <a href="//www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2f2022%2fnix-devshells%2f&amp;title=Nix%20dev%20shells%20from%2010%2c000%20feet" target="_blank" title="Share on LinkedIn">
+          <i class="iconfont icon-linkedin"></i>
+        </a>
+        
+      
+      
+        
+      
+        <a href="//news.ycombinator.com/submitlink?u=http%3a%2f%2flocalhost%3a1313%2f2022%2fnix-devshells%2f&amp;description=Nix%20dev%20shells%20from%2010%2c000%20feet" target="_blank" title="Share on Hacker News">
+          <i class="iconfont icon-ycombinator"></i>
+        </a>
+        
+        
+      
+
+          
+
+          
+
+          
+
+          
+
+</span>
+                
+            </p>
+
+            
+    </div>
+
+
+    <div class="post-tags">
+        
+        <section>
+                <a href="javascript:window.history.back();">Back</a></span> ·
+                <span><a href="http://localhost:1313/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        
+        <a href="http://localhost:1313/2022/fixing-selfhosting/" class="next" rel="next" title="Problems with self-hosting">Problems with self-hosting&nbsp;<i class="iconfont icon-xiaojiantou"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+          
+
+ 
+
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>

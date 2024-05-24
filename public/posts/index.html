@@ -1,10 +1,180 @@
-<!doctype html><html lang=en-us><head><link rel=webmention href=https://webmention.io/vranix.com/webmention><link rel=pingback href=https://webmention.io/vranix.com/xmlrpc><meta charset=utf-8><meta http-equiv=x-ua-compatible content="chrome=1"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><link rel=canonical href=https://vranix.com/posts/><link rel='shortcut icon' type=image/x-icon href=/favicon.ico><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/site.webmanifest><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><meta name=msapplication-TileColor content="#da532c"><meta name=theme-color content="#ffffff"><title>Posts | vranix</title><meta name=title content="Posts | vranix"><link rel=stylesheet href=/font/iconfont.css><link rel=stylesheet href=/css/main.min.css><link rel=alternate href=/posts/index.xml type=application/rss+xml title=vranix><link rel=feed href=/posts/index.xml type=application/rss+xml title=vranix><meta name=twitter:card content="summary"><meta name=twitter:title content="Posts"><meta name=twitter:description content="Shaw Vrana's personal website"></head><body><div class=wrapper><nav class=navbar><div class=container><div class="navbar-header header-logo"><a href=https://vranix.com/>vranix</a></div><div class="menu navbar-right"><a class=menu-item href=/posts/ title>Blog</a>
-<a class=menu-item href=/about title>About</a>
-<a class=menu-item href=/resume title>Resume</a>
-<a href=javascript:void(0); class=theme-switch><i class="iconfont icon-sun"></i></a>&nbsp;</div></div></nav><nav class=navbar-mobile id=nav-mobile style=display:none><div class=container><div class=navbar-header><div><a href=javascript:void(0); class=theme-switch><i class="iconfont icon-sun"></i></a>&nbsp;<a href=https://vranix.com/>vranix</a></div><div class=menu-toggle><span></span><span></span><span></span></div></div><div class=menu id=mobile-menu><a class=menu-item href=/posts/ title>Blog</a>
-<a class=menu-item href=/about title>About</a>
-<a class=menu-item href=/resume title>Resume</a></div></div></nav><main class=main><div class=container><div class="post-warp archive"><h2 class=post-title style=text-align:right;padding-bottom:2em>&nbsp;Posts&nbsp;</h2><h3>2024</h3><article class=archive-item><a href=/2024/geniveev/ class=archive-item-link>Introducing Geniveev: a CLI for boilerplate generation</a>
-<span class=archive-item-date>8 April 2024</span></article><article class=archive-item><a href=/2024/lua-highlighting-homemanager-vim/ class=archive-item-link>home-manager neovim setup: embedded lua highliting</a>
-<span class=archive-item-date>6 April 2024</span></article><h3>2022</h3><article class=archive-item><a href=/2022/fixing-selfhosting/ class=archive-item-link>Problems with self-hosting</a>
-<span class=archive-item-date>12 May 2022</span></article><article class=archive-item><a href=/2022/nix-devshells/ class=archive-item-link>Nix dev shells from 10,000 feet</a>
-<span class=archive-item-date>9 March 2022</span></article></div></div></main><script src=/js/vendor_main.min.js async></script></div></body></html>
+<!DOCTYPE html>
+<html lang="en-us">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <link rel="webmention" href="https://webmention.io/vranix.com/webmention" />
+<link rel="pingback" href="https://webmention.io/vranix.com/xmlrpc" />
+
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  
+  
+  
+  
+  
+  
+  
+  <link rel="canonical" href="http://localhost:1313/posts/" />
+  <link rel='shortcut icon' type='image/x-icon' href='/favicon.ico' />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Posts | vranix
+       
+  </title>
+  <meta name="title" content="Posts | vranix">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  <link rel="alternate" href="/posts/index.xml" type="application/rss+xml" title="vranix">
+  <link rel="feed" href="/posts/index.xml" type="application/rss+xml" title="vranix">
+  <meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Posts"/>
+<meta name="twitter:description" content="Shaw Vrana&#39;s personal website"/>
+
+  </head>
+
+  
+
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="http://localhost:1313/">vranix</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a class="menu-item" href="/resume" title="">Resume</a>
+                
+                <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-sun"></i></a>&nbsp;<a href="http://localhost:1313/">vranix</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/about" title="">About</a>
+                
+                <a class="menu-item" href="/resume" title="">Resume</a>
+                
+        </div>
+    </div>
+</nav>
+
+    	 <main class="main">
+          <div class="container">
+      		
+
+<div class="post-warp archive">
+    <h2 class="post-title" style="text-align:right;padding-bottom:2em">&nbsp;Posts&nbsp;</h2>
+    
+    <h3>2024</h3>
+
+    
+    <article class="archive-item">
+        <a href="/2024/geniveev/" class="archive-item-link">Introducing Geniveev: a CLI for boilerplate generation</a>
+        <span class="archive-item-date">
+            8 April 2024
+        </span>
+    </article>
+    
+    <article class="archive-item">
+        <a href="/2024/lua-highlighting-homemanager-vim/" class="archive-item-link">home-manager neovim setup: embedded lua highliting</a>
+        <span class="archive-item-date">
+            6 April 2024
+        </span>
+    </article>
+     
+    <h3>2023</h3>
+
+    
+    <article class="archive-item">
+        <a href="/2023/productive-dev-setup/" class="archive-item-link">Productive Dev Setup</a>
+        <span class="archive-item-date">
+            4 March 2023
+        </span>
+    </article>
+     
+    <h3>2022</h3>
+
+    
+    <article class="archive-item">
+        <a href="/2022/retrospective-one-iii/" class="archive-item-link">Retrospective One: Innovative</a>
+        <span class="archive-item-date">
+            13 May 2022
+        </span>
+    </article>
+    
+    <article class="archive-item">
+        <a href="/2022/fixing-selfhosting/" class="archive-item-link">Problems with self-hosting</a>
+        <span class="archive-item-date">
+            12 May 2022
+        </span>
+    </article>
+    
+    <article class="archive-item">
+        <a href="/2022/nix-devshells/" class="archive-item-link">Nix dev shells from 10,000 feet</a>
+        <span class="archive-item-date">
+            9 March 2022
+        </span>
+    </article>
+     
+    
+
+
+</div>
+
+          </div>
+		   </main>
+      
+
+
+
+
+
+
+
+
+
+    
+    <script src="/js/vendor_main.min.js" async=""></script>
+
+
+
+
+
+
+
+     </div>
+  </body>
+</html>

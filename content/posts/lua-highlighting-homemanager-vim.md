@@ -1,5 +1,5 @@
 ---
-title: "home-manager neovim setup: embedded lua highliting"
+title: "home-manager neovim setup: embedded lua highlighting"
 date: 2024-04-06T06:47:09-07:00
 draft: false
 ---
