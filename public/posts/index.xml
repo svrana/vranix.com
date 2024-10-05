@@ -16,7 +16,7 @@
       <description>I worked on a product with a microservice architecture for a while. As one does working in such an environment, I found myself creating a lot of little services. Each of these services was first described as a service in a protobuf file. The services were compiled into an interface which you would then implement. We also used a tool for injecting dependencies to make creating these services easier.&#xA;This is a long way for me to say that to start a new project, I would generally have to create three files in different (new) directories.</description>
     </item>
     <item>
-      <title>home-manager neovim setup: embedded lua highliting</title>
+      <title>home-manager neovim setup: embedded lua highlighting</title>
       <link>http://localhost:1313/2024/lua-highlighting-homemanager-vim/</link>
       <pubDate>Sat, 06 Apr 2024 06:47:09 -0700</pubDate>
       <guid>http://localhost:1313/2024/lua-highlighting-homemanager-vim/</guid>
